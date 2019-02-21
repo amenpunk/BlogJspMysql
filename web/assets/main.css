@@ -74,7 +74,7 @@ body{
 }
 
 .bloque{
-    border: 1px solid #ccc;
+
     display: block;
     width:90%;
     margin:20px auto;
@@ -152,4 +152,13 @@ input[type="submit"]{
     padding-bottom:15px;
     text-align: center;
 
+}
+
+div#container{
+    border-right: 2px #4c4c4c solid;
+}
+
+div.principal{
+    paddin-left:100px;
+    border-right: 2px black solid;
 }
