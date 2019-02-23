@@ -7,6 +7,7 @@
         String password = request.getParameter("pass");
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
+        String fecha = request.getParameter("date");
 
     } else {
         response.sendRedirect("index.jsp");

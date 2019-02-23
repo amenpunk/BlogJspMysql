@@ -23,6 +23,8 @@
             <input name="email" type="text">
             <label for="paswword">Contraseña</label>
             <input name="pass" type="password">
+            <label for="date">Fecha de nacimiento</label>
+            <input name="date"  type="date">
 
             <input name="submit" type="submit" value="Registrate">
         </form>
