@@ -13,16 +13,16 @@
     HttpSession sesion = request.getSession();
     if (request.getParameterMap().containsKey("submit")) {
 
-        ResultSet rs = null;
         conexion conc = new conexion();
         Connection conn = conc.getConexion();
+
         String email = request.getParameter("email");
         String password = request.getParameter("pass");
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         Statement st = conn.createStatement();
 
-        rs = st.executeQuery("Select count(email) as total from usuarios where email = '" + email + "'");
+        ResultSet rs = st.executeQuery("Select count(email) as total from usuarios where email = '" + email + "'");
         int total = 0;
         while (rs.next()) {
             total = rs.getInt("total");
@@ -33,9 +33,11 @@
             sesion.setAttribute("error", error);
             response.sendRedirect("index.jsp");
         } else {
-            //int i = st.executeUpdate("Insert into prueba(nombre,apellido) values('" + nombre + "','" + apellido + "')");
+
+            int i = st.executeUpdate("Insert into usuarios(nombre,apellidos,email,password) values('" + nombre + "','" + apellido + "','" + email + "','" + password + "')");
             out.print("welcome");
             sesion.removeAttribute("error");
+            response.sendRedirect("index.jsp");
         }
     } else {
 

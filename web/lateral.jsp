@@ -23,7 +23,7 @@
             <input name="apellido" type="text">
             <label for="text">Email</label>
             <input name="email" type="text">
-            <label for="paswword">Contraseña</label>
+            <label for="password">Contraseña</label>
             <input name="pass" type="password">
             <input name="submit" type="submit" value="Registrate">
             </br>
