@@ -37,6 +37,8 @@
             int i = st.executeUpdate("Insert into usuarios(nombre,apellidos,email,password) values('" + nombre + "','" + apellido + "','" + email + "','" + password + "')");
             out.print("welcome");
             sesion.removeAttribute("error");
+            String com = "Registro Completado";
+            sesion.setAttribute("completado", com);
             response.sendRedirect("index.jsp");
         }
     } else {

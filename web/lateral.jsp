@@ -3,12 +3,11 @@
 
     <div class="bloque">
         <h3>Identificate</h3>
-        <form action="registro.jsp" method="POST">
+        <form action="login.jsp" method="POST">
             <label for="email">Email</label>
             <input name="email" type="text">
             <label for="pas">Contraseña</label>
             <input name="pass" type="password">
-
             <input name="submit" type="submit" value="Ingresar">
         </form>
     </div>
@@ -29,13 +28,16 @@
             </br>
             <%
 
-                HttpSession objSesion = request.getSession(false);
                 String usuario = (String) objSesion.getAttribute("error");
+                String completado = (String) objSesion.getAttribute("completado");
 
                 if (usuario != null) {
                     out.println("Error: " + usuario);
                 }
-
+                if (completado != null) {
+                    out.println(completado);
+                    objSesion.removeAttribute("completado");
+                }
             %>
         </form>
     </div>
