@@ -1,3 +1,4 @@
+<%@ page import="java.io.*" %>
 <aside id="sidebar">
 
     <div class="bloque">
@@ -14,7 +15,8 @@
 
     <div class="bloque">
         <h3>Registrate</h3>
-        <form action="registro.jsp" method="POST">
+
+        <form action="registros.jsp" method="POST">
             <label for="nombre">Nombre</label>
             <input name="nombre" type="text">
             <label for="apellido">Apellido</label>
@@ -23,10 +25,18 @@
             <input name="email" type="text">
             <label for="paswword">Contraseña</label>
             <input name="pass" type="password">
-            <label for="date">Fecha de nacimiento</label>
-            <input name="date"  type="date">
-
             <input name="submit" type="submit" value="Registrate">
+            </br>
+            <%
+
+                HttpSession objSesion = request.getSession(false);
+                String usuario = (String) objSesion.getAttribute("error");
+
+                if (usuario != null) {
+                    out.println("Error: " + usuario);
+                }
+
+            %>
         </form>
     </div>
 </aside>
