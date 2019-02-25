@@ -8,6 +8,7 @@
     //recoger datos del formulario
     String nombre = "";
     String apellido = "";
+    String err_login = "Usuario o contraseña incorrecto";
     if (request.getParameterMap().containsKey("submit")) {
         String email = request.getParameter("email");
         String pass = request.getParameter("pass");
@@ -30,7 +31,11 @@
             sesion.setAttribute("user_nombre", nombre);
             sesion.setAttribute("user_apellido", apellido);
             response.sendRedirect("index.jsp");
+            session.removeAttribute("err_login");
 
+        } else {
+            session.setAttribute("err_login", err_login);
+            response.sendRedirect("index.jsp");
         }
 
     }

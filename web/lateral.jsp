@@ -1,23 +1,32 @@
 <%@ page import="java.io.*" %>
 <aside id="sidebar">
+
     <div class="bloque">  <%
 
         HttpSession objSesion = request.getSession(false);
         String id = (String) objSesion.getAttribute("user_nombre");
         String ape = (String) objSesion.getAttribute("user_apellido");
+        String err_log = (String) objSesion.getAttribute("err_login");
+
+        if (err_log != null) {
+            out.print(err_log);
+        }
 
         if (id != null) {
-
-            out.println(id + " " + ape);
+            String nombre = "$~" + " " + id + "@" + ape;
+            //out.println("" + id + " " + ape);
         %>
-        <form action="cerrar.jsp" method="POST">
-            <input type="submit" value="Cerra Sesion">
-        </form>
+        <p class="us_login"><%= nombre%></p>
+        <a href="crear_entrada.jsp" class="btn">~$ Crear entradas</a>
+        <a href="datos.jsp" class="btn">~$ Mis datos</a>
+        <a href="crear_categoria.jsp" class="btn">~$ Crear categoría</a>
+        <a href="cerrar.jsp" class="btn">~$  Cerrar Sesion </a>
+
         <%
             }
         %>
-
     </div>
+
     <div class="bloque">
         <h3>Identificate</h3>
         <form action="login.jsp" method="POST">

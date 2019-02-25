@@ -5,6 +5,26 @@
     font-style: nommal;
 }
 
+.btn{
+    width: 80%;
+    display: block;
+    font-size:15px;
+    margin-top:5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 2px solid #4c4c4c
+}
+
+.us_login{
+    color: white;
+    font-size:15px;
+    padding:10px;
+    margin-top:25px;
+    margin-bottom: 25px;
+    background-color: #4c4c4c;
+    width: 80%;
+}
+
 *{
     font-family: "inconsolata";
     margin: 0;
@@ -159,7 +179,7 @@ div#container{
 }
 
 div.principal{
-    paddin-left:100px;
+
     border-right: 2px black solid;
 }
 
