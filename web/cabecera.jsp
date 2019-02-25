@@ -24,17 +24,7 @@
                     <li><a href="index.jsp">Categoria 3</a></li>
                     <li><a href="index.jsp">Categoria 4</a></li>
                 </ul>
-                <%
 
-                    HttpSession objSesion = request.getSession(false);
-                    String id = (String) objSesion.getAttribute("user_nombre");
-                    String ape = (String) objSesion.getAttribute("user_apellido");
-
-                    if (id != null) {
-                        out.println(id + " " + ape);
-
-                    }
-                %>
             </nav>
         </header>
         <div id="container">

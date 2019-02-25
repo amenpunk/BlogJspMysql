@@ -99,7 +99,7 @@ input[type="submit"]{
     margin-bottom: 5px;
     background-color: #74a6f7;
     padding: 10px;
-    width: 100px;
+    width: 125px;
 }
 
 
@@ -161,4 +161,9 @@ div#container{
 div.principal{
     paddin-left:100px;
     border-right: 2px black solid;
+}
+
+.left-p{
+    float: right;
+
 }

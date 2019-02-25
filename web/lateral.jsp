@@ -1,6 +1,23 @@
 <%@ page import="java.io.*" %>
 <aside id="sidebar">
+    <div class="bloque">  <%
 
+        HttpSession objSesion = request.getSession(false);
+        String id = (String) objSesion.getAttribute("user_nombre");
+        String ape = (String) objSesion.getAttribute("user_apellido");
+
+        if (id != null) {
+
+            out.println(id + " " + ape);
+        %>
+        <form action="cerrar.jsp" method="POST">
+            <input type="submit" value="Cerra Sesion">
+        </form>
+        <%
+            }
+        %>
+
+    </div>
     <div class="bloque">
         <h3>Identificate</h3>
         <form action="login.jsp" method="POST">
@@ -27,7 +44,6 @@
             <input name="submit" type="submit" value="Registrate">
             </br>
             <%
-
                 String usuario = (String) objSesion.getAttribute("error");
                 String completado = (String) objSesion.getAttribute("completado");
 
