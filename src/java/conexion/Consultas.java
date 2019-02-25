@@ -24,4 +24,11 @@ public class Consultas extends conexion {
         return rs;
     }
 
+    public void ingresarCategoria(String nombre) throws SQLException {
+        String query = "insert into categorias(nombre) values('" + nombre + "' )";
+        Statement st = conn.createStatement();
+        st.executeUpdate(query);
+
+    }
+
 }
