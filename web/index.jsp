@@ -1,6 +1,4 @@
 <%@ include file="cabecera.jsp" %>
-
-
 <%@ include file="lateral.jsp" %>
 
 <div class="principal">

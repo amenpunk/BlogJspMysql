@@ -5,6 +5,14 @@
     font-style: nommal;
 }
 
+
+a#one{
+    font-size:15px;
+    margin-left: 15px;
+    background-color: #74a6f7;
+    width: 300px;
+}
+
 .btn{
     width: 80%;
     display: block;

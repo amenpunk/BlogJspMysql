@@ -1,3 +1,6 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="conexion.Consultas"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,14 +18,21 @@
                 </a>
             </div>
 
+            <%  Consultas con = new Consultas();
+                ResultSet categorias = con.listarCategorias();
 
+            %>
             <!-- navegador -->
             <nav id="menu">
+
                 <ul>
-                    <li><a href="index.jsp">Categoría 1</a></li>
-                    <li><a href="index.jsp">Categoria 2</a></li>
-                    <li><a href="index.jsp">Categoria 3</a></li>
-                    <li><a href="index.jsp">Categoria 4</a></li>
+                    <li ><a href="index.jsp" id="one">Categorias:</a></li>
+                        <% while (categorias.next()) {
+                                String cat = categorias.getString("nombre");
+
+                        %>
+                    <li><a href="index.jsp"><% out.print(cat); %></a></li>
+                        <% }%>
                 </ul>
 
             </nav>

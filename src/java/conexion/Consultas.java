@@ -5,10 +5,24 @@
  */
 package conexion;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 /**
  *
  * @author Neon
  */
 public class Consultas extends conexion {
 
+    public ResultSet listarCategorias() throws SQLException {
+        conexion conc = new conexion();
+        Connection conn = conc.getConexion();
+        Statement st = conn.createStatement();
+        String query = "SELECT * FROM categorias";
+        ResultSet rs = st.executeQuery(query);
+        return rs;
+    }
 }
