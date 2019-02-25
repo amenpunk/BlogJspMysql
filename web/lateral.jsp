@@ -15,7 +15,7 @@
         if (id != null) {
             String nombre = "$~" + " " + id + "@" + ape;
             //out.println("" + id + " " + ape);
-        %>
+%>
         <p class="us_login"><%= nombre%></p>
         <a href="crear_entrada.jsp" class="btn">~$ Crear entradas</a>
         <a href="datos.jsp" class="btn">~$ Mis datos</a>
@@ -26,6 +26,8 @@
             }
         %>
     </div>
+
+    <% if (id == null) { %>
 
     <div class="bloque">
         <h3>Identificate</h3>
@@ -65,5 +67,6 @@
                 }
             %>
         </form>
+        <% }%>
     </div>
 </aside>

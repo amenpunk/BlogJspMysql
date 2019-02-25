@@ -1,10 +1,22 @@
 @font-face {
     font-family: "inconsolata";
-    src: url(/font.ttf) format('truetype');
+    src: url("./font.ttf") format('truetype');
     font-weight: normal;
     font-style: nommal;
 }
 
+
+#hash{
+    background-color:#74a6f7;
+    margin-left: 25px;
+    padding-left:10px;
+    padding-right:10px;
+    border: 1px solid slategray;
+}
+
+#tmain{
+    color: #20c1c0;
+}
 
 a#one{
     font-size:15px;
@@ -27,7 +39,7 @@ a#one{
     color: white;
     font-size:15px;
     padding:10px;
-    margin-top:25px;
+    margin-top: 10px;
     margin-bottom: 25px;
     background-color: #4c4c4c;
     width: 80%;
@@ -105,7 +117,7 @@ body{
 
     display: block;
     width:90%;
-    margin:20px auto;
+    margin-left: 0px;
     padding:15px;
     box-shadow: -41px 51px 68px 5px rgba(0, 0, 0, 0.06);
 }
@@ -134,13 +146,14 @@ input[type="submit"]{
 
 .principal{
     float:left;
-    width:65%;
+    width:60%;
     min-height: auto;
     background-color: #4c4c4c;
     color:white;
     box-shadow: 0px 0px 5px #4c4c4c;
     margin-top:25px;
     margin-left: 20px;
+    margin-right: 0px;
     padding:20px;
     overflow:hidden;
 }

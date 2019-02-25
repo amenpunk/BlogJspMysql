@@ -1,28 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package conexion;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
-/**
- *
- * @author Neon
- */
 public class Consultas extends conexion {
 
+    public conexion conc = new conexion();
+    public Connection conn = conc.getConexion();
+
     public ResultSet listarCategorias() throws SQLException {
-        conexion conc = new conexion();
-        Connection conn = conc.getConexion();
         Statement st = conn.createStatement();
         String query = "SELECT * FROM categorias";
         ResultSet rs = st.executeQuery(query);
         return rs;
     }
+
+    public ResultSet conseguirUltimasEntradas() throws SQLException {
+        String query = "SELECT e.*,c.* from entradas e INNER JOIN categorias c ON e.categoria_id = c.id  ORDER BY e.id DESC LIMIT 4";
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(query);
+        return rs;
+    }
+
 }
