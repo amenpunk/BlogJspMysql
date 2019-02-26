@@ -15,9 +15,9 @@
         if (id != null) {
             String nombre = "$~" + " " + id + "@" + ape;
             //out.println("" + id + " " + ape);
-%>
+        %>
         <p class="us_login"><%= nombre%></p>
-        <a href="crear_entrada.jsp" class="btn">~$ Crear entradas</a>
+        <a href="crear_entrada.jsp" class="btn">~$ Crear entrada</a>
         <a href="datos.jsp" class="btn">~$ Mis datos</a>
         <a href="crear_categoria.jsp" class="btn">~$ Crear categoría</a>
         <a href="cerrar.jsp" class="btn">~$  Cerrar Sesion </a>

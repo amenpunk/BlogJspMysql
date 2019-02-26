@@ -1,10 +1,8 @@
 <%@page import="java.sql.ResultSet"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="conexion.Consultas"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="./assets/main.css">
         <title>Simple Blog</title>

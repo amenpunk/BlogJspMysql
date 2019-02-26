@@ -7,6 +7,7 @@
     //inicar la sesion y la conexion a db
     //recoger datos del formulario
     String nombre = "";
+    String id = "";
     String apellido = "";
     String err_login = "Usuario o contraseña incorrecto";
     if (request.getParameterMap().containsKey("submit")) {
@@ -17,19 +18,21 @@
         Connection conn = conc.getConexion();
         Statement st = conn.createStatement();
 
-        ResultSet rs = st.executeQuery("Select nombre,apellidos,count(*) as total from usuarios where email ='" + email + "' and password ='" + pass + "'");
+        ResultSet rs = st.executeQuery("Select id,nombre,apellidos,count(*) as total from usuarios where email ='" + email + "' and password ='" + pass + "'");
         int total = 0;
         while (rs.next()) {
             total = rs.getInt("total");
             nombre = rs.getString("nombre");
             apellido = rs.getString("apellidos");
-            out.print(total);
+            id = rs.getString("id");
+            //out.print(total);
 
         }
         if (total == 1) {
             HttpSession sesion = request.getSession();
             sesion.setAttribute("user_nombre", nombre);
             sesion.setAttribute("user_apellido", apellido);
+            sesion.setAttribute("id_user", id);
             response.sendRedirect("index.jsp");
             session.removeAttribute("err_login");
 

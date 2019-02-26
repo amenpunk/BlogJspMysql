@@ -28,7 +28,12 @@ public class Consultas extends conexion {
         String query = "insert into categorias(nombre) values('" + nombre + "' )";
         Statement st = conn.createStatement();
         st.executeUpdate(query);
+    }
 
+    public void ingresarPost(int user_id, int cat_id, String titulo, String descrip) throws SQLException {
+        String query = "INSERT INTO entradas(usuario_id,categoria_id,titulo,descripcion,fecha) values('" + user_id + "','" + cat_id + "','" + titulo + "','" + descrip + "',01/01/2018)";
+        Statement st = conn.createStatement();
+        st.executeUpdate(query);
     }
 
 }
