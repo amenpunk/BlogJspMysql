@@ -1,6 +1,7 @@
 package conexion;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -34,6 +35,19 @@ public class Consultas extends conexion {
         String query = "INSERT INTO entradas(usuario_id,categoria_id,titulo,descripcion,fecha) values('" + user_id + "','" + cat_id + "','" + titulo + "','" + descrip + "',01/01/2018)";
         Statement st = conn.createStatement();
         st.executeUpdate(query);
+    }
+
+    public int actulizarDatos(int id, String nombre, String apellido) throws SQLException {
+        int cont = 9;
+        String query = "UPDATE usuarios set nombre=?,apellidos=? WHERE id=" + id;
+        PreparedStatement ps = conn.prepareStatement(query);
+        ps.setString(1, nombre);
+        ps.setString(2, apellido);
+        int i = ps.executeUpdate();
+        if (i != 0) {
+            cont = 1;
+        }
+        return cont;
     }
 
 }
