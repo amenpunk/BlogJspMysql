@@ -27,11 +27,6 @@
     </article>
     <% }%>
 
-    <div id="ver-todas">
-        <a href="">
-            $ ----> Ver todas las entradas
-        </a>
-    </div>
 
 </div>
 

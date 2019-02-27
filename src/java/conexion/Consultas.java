@@ -10,9 +10,13 @@ public class Consultas extends conexion {
 
     public conexion conc = new conexion();
     public Connection conn = conc.getConexion();
+    Statement st;
+
+    public Consultas() throws SQLException {
+        this.st = conn.createStatement();
+    }
 
     public ResultSet listarCategorias() throws SQLException {
-        Statement st = conn.createStatement();
         String query = "SELECT * FROM categorias";
         ResultSet rs = st.executeQuery(query);
         return rs;
@@ -20,20 +24,17 @@ public class Consultas extends conexion {
 
     public ResultSet conseguirUltimasEntradas() throws SQLException {
         String query = "SELECT e.*,c.* from entradas e INNER JOIN categorias c ON e.categoria_id = c.id  ORDER BY e.id DESC LIMIT 4";
-        Statement st = conn.createStatement();
         ResultSet rs = st.executeQuery(query);
         return rs;
     }
 
     public void ingresarCategoria(String nombre) throws SQLException {
         String query = "insert into categorias(nombre) values('" + nombre + "' )";
-        Statement st = conn.createStatement();
         st.executeUpdate(query);
     }
 
-    public void ingresarPost(int user_id, int cat_id, String titulo, String descrip) throws SQLException {
+    public void ingresarPost(String user_id, int cat_id, String titulo, String descrip) throws SQLException {
         String query = "INSERT INTO entradas(usuario_id,categoria_id,titulo,descripcion,fecha) values('" + user_id + "','" + cat_id + "','" + titulo + "','" + descrip + "',01/01/2018)";
-        Statement st = conn.createStatement();
         st.executeUpdate(query);
     }
 
@@ -48,6 +49,22 @@ public class Consultas extends conexion {
             cont = 1;
         }
         return cont;
+    }
+
+    public String getNombreCategoria(String id) throws SQLException {
+        String nombre = "";
+        String query = "SELECT nombre FROM categorias where id =" + id;
+        ResultSet rs = st.executeQuery(query);
+        while (rs.next()) {
+            nombre = rs.getString("nombre");
+        }
+        return nombre;
+    }
+
+    public ResultSet entradasFiltro(String id_cat) throws SQLException {
+        String query = "SELECT * FROM entradas where categoria_id =" + id_cat;
+        ResultSet rs = st.executeQuery(query);
+        return rs;
     }
 
 }

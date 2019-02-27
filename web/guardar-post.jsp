@@ -5,7 +5,7 @@
     int id_cat = Integer.parseInt(id_c);
     String cont = request.getParameter("desc");
     HttpSession objSesion = request.getSession(false);
-    int id = (int) objSesion.getAttribute("id_user");
+    String id = (String) objSesion.getAttribute("id_user");
     //out.print(id + " " + id_cat + " " + titulo + " " + cont);
     Consultas ins = new Consultas();
     ins.ingresarPost(id, id_cat, titulo, cont);

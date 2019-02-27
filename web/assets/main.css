@@ -9,16 +9,20 @@
     height: 75px;
 }
 
+#cattit{
+    font-size: 50px;
+    color: #3670d1;
+}
+
 #hash{
-    background-color:#74a6f7;
+    background-color:#3580ff;
     margin-left: 25px;
     padding-left:10px;
     padding-right:10px;
-    border: 1px solid slategray;
 }
 
 #tmain{
-    color: #20c1c0;
+    color: #3670d1;
 }
 
 a#one{

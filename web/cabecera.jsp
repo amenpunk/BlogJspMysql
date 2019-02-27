@@ -25,12 +25,12 @@
             <nav id="menu">
 
                 <ul>
-                    <li ><a href="index.jsp" id="one">Categorias:</a></li>
+                    <li ><a href="index.jsp">Categorias:</a></li>
                         <% while (categorias.next()) {
                                 String cat = categorias.getString("nombre");
-
+                                String id = categorias.getString("id");
                         %>
-                    <li><a href="index.jsp"><% out.print(cat); %></a></li>
+                    <li><a href="getCategoria.jsp?id=<%=id%>"><% out.print(cat); %></a></li>
                         <% }%>
                 </ul>
 
