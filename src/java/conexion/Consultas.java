@@ -33,9 +33,14 @@ public class Consultas extends conexion {
         st.executeUpdate(query);
     }
 
-    public void ingresarPost(String user_id, int cat_id, String titulo, String descrip) throws SQLException {
-        String query = "INSERT INTO entradas(usuario_id,categoria_id,titulo,descripcion,fecha) values('" + user_id + "','" + cat_id + "','" + titulo + "','" + descrip + "',01/01/2018)";
-        st.executeUpdate(query);
+    public void ingresarPost(String user_id, String cat_id, String titulo, String descrip) throws SQLException {
+        try {
+            String query = "INSERT INTO entradas(usuario_id,categoria_id,titulo,descripcion) values('" + user_id + "','" + cat_id + "','" + titulo + "','" + descrip + ")";
+            st.executeUpdate(query);
+        } catch (SQLException e) {
+            System.err.println("Error: " + e);
+        }
+
     }
 
     public int actulizarDatos(int id, String nombre, String apellido) throws SQLException {
