@@ -22,7 +22,7 @@
     <article class="entrada">
         <a href="#">
             <h2>&rarr; <% out.print(titulo);%><small id="hash">#<% out.print(nomb_cat);%></small></h2>
-            <p><% out.print(descri.substring(0, 250));%> </p>
+            <p><% out.print(descri);%> </p>
         </a>
     </article>
     <% }%>
