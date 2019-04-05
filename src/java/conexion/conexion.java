@@ -11,7 +11,11 @@ public class conexion {
     public conexion() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
+<<<<<<< HEAD
             cnx = DriverManager.getConnection("jdbc:mysql://localhost:7702/blog?user=root&password=");
+=======
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost:7702/blog?user=root&password=naruto10");
+>>>>>>> 089d6eb61a23ca121442664bd58986052a258ff5
         } catch (ClassNotFoundException e) {
             System.err.println("Error: " + e);
         } catch (SQLException e) {
